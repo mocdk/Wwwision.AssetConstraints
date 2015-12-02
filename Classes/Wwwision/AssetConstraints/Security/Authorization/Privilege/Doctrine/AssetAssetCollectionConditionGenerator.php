@@ -46,6 +46,6 @@ class AssetAssetCollectionConditionGenerator implements SqlGeneratorInterface
             FROM typo3_media_domain_model_asset AS ' . $targetTableAlias . '_a
             LEFT JOIN typo3_media_domain_model_assetcollection_assets_join ' . $targetTableAlias . '_acj ON ' . $targetTableAlias . '_a.persistence_object_identifier = ' . $targetTableAlias . '_acj.media_asset
             LEFT JOIN typo3_media_domain_model_assetcollection ' . $targetTableAlias . '_ac ON ' . $targetTableAlias . '_ac.persistence_object_identifier = ' . $targetTableAlias . '_acj.media_assetcollection
-            WHERE ' . $targetTableAlias . '_ac.title = ' . $quotedCollectionTitle . ')';
+            WHERE ' . $targetTableAlias . '_ac.title != ' . $quotedCollectionTitle . ')';
     }
 }
